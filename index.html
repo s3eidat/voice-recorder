@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Voice Recorder — Free Online Voice Memo Recorder with Waveform | S3eidat Tools</title>
+<meta name="description" content="Record voice memos in your browser with a live waveform and level meter. Pause/resume, rename, play, download as the original file or WAV. Saved on your device only, nothing uploaded.">
+<meta property="og:title" content="Voice Recorder — free, private voice memos">
+<meta property="og:description" content="Record voice memos with a live waveform. Saved on your device, never uploaded.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="voice-recorder">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Voice Recorder</h1>
+    <p>Record voice memos with a live waveform. Recordings are saved in this browser on your device, never uploaded. Rename, play and download them as the original file or WAV.</p>
+  </section>
+
+  <div class="grid-2 vr-grid">
+    <section class="card stack">
+      <div class="row between">
+        <h2>Recorder</h2>
+        <span class="chip" id="status">Ready</span>
+      </div>
+      <div class="scope">
+        <canvas id="wave" width="1000" height="260" aria-label="Live waveform"></canvas>
+        <div class="scope-time mono" id="timer">0:00.0</div>
+      </div>
+      <div class="meter" aria-hidden="true"><i id="level"></i></div>
+      <div class="row between faint"><span id="db">— dB</span><span id="fmt"></span></div>
+      <div class="row vr-controls">
+        <button class="btn primary big" id="rec" aria-label="Start recording"><span class="rec-dot"></span><span id="recLbl">Record</span></button>
+        <button class="btn big" id="pause" disabled><svg class="i"><use href="#i-pause"/></svg><span>Pause</span></button>
+        <button class="btn big" id="discard" disabled aria-label="Discard recording"><svg class="i"><use href="#i-x"/></svg></button>
+      </div>
+      <details class="opts">
+        <summary>Microphone options</summary>
+        <div class="stack mt">
+          <label class="check"><input type="checkbox" id="ns" checked> Noise suppression</label>
+          <label class="check"><input type="checkbox" id="ec" checked> Echo cancellation</label>
+          <label class="check"><input type="checkbox" id="agc" checked> Automatic gain</label>
+          <p class="faint">Turn these off for music or to keep the raw sound. Changes apply to the next recording.</p>
+        </div>
+      </details>
+      <div class="card notice" id="notice" hidden></div>
+      <p class="faint">The microphone is only requested when you press Record. Shortcut: <kbd>R</kbd> record/stop, <kbd>Space</kbd> pause.</p>
+    </section>
+
+    <section class="card stack">
+      <div class="row between">
+        <h2>Recordings <small id="count"></small></h2>
+        <span class="faint" id="usage"></span>
+      </div>
+      <div id="list" class="recs"></div>
+      <div class="empty" id="empty"><b>No recordings yet</b>Press Record and start talking. Your memos are kept in this browser until you delete them.</div>
+      <p class="faint" id="storeNote"></p>
+    </section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

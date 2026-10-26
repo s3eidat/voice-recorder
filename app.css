@@ -1,0 +1,25 @@
+.vr-grid { align-items: start; }
+.scope { position: relative; border-radius: 14px; overflow: hidden; background: var(--surface-2); border: 1px solid var(--line); }
+.scope canvas { display: block; width: 100%; height: 150px; }
+.scope-time { position: absolute; left: 12px; top: 10px; font-size: 22px; font-weight: 700; color: var(--text); }
+.meter { height: 8px; border-radius: 99px; background: var(--surface-3); overflow: hidden; }
+.meter i { display: block; height: 100%; width: 0; border-radius: 99px; background: linear-gradient(90deg, var(--ok), var(--warn) 75%, var(--danger)); transition: width 60ms linear; }
+.vr-controls .btn.big { flex: 1; min-width: 90px; }
+.vr-controls #discard { flex: 0 0 auto; min-width: 0; width: 46px; padding: 0; }
+.rec-dot { width: 12px; height: 12px; border-radius: 50%; background: #ff5a5a; box-shadow: 0 0 0 3px rgba(255, 90, 90, .25); transition: border-radius var(--dur); }
+.is-rec .rec-dot { border-radius: 3px; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: .35; } }
+.opts summary { cursor: pointer; color: var(--text-2); font-weight: 600; font-size: 13px; }
+.notice { padding: 12px 14px; border-color: var(--warn); background: var(--surface-2); box-shadow: none; }
+.recs { display: grid; gap: 8px; max-height: 560px; overflow: auto; }
+.rec { display: grid; gap: 8px; padding: 10px 12px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--line); }
+.rec.playing { border-color: var(--accent); }
+.rec-top { display: flex; align-items: center; gap: 10px; }
+.rec-top .input { min-height: 32px; padding: 4px 8px; background: transparent; border-color: transparent; font-weight: 600; }
+.rec-top .input:hover { border-color: var(--line); }
+.rec .play { width: 36px; height: 36px; border-radius: 50%; padding: 0; flex: none; }
+.rec canvas { width: 100%; height: 34px; display: block; cursor: pointer; }
+.rec-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.rec-meta .faint { margin-right: auto; }
+.rec-meta .acts { display: flex; gap: 6px; margin-left: auto; }
+.btn.danger.armed { background: var(--danger-soft); }
