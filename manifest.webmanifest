@@ -1,0 +1,18 @@
+{
+  "name": "Voice Recorder — S3eidat Tools",
+  "short_name": "Voice Record",
+  "description": "Record voice memos with a live waveform",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d0f12",
+  "theme_color": "#0d0f12",
+  "icons": [
+    {
+      "src": "kit/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
